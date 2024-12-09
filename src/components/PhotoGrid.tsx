@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import {
   Dialog,
   DialogContent,
@@ -50,6 +50,21 @@ const photos = [
 
 export const PhotoGrid = () => {
   const [selectedPhoto, setSelectedPhoto] = useState<typeof photos[0] | null>(null);
+  const [loadedImages, setLoadedImages] = useState<Set<string>>(new Set());
+
+  useEffect(() => {
+    const preloadImages = () => {
+      photos.forEach(photo => {
+        const img = new Image();
+        img.src = photo.src;
+        img.onload = () => {
+          setLoadedImages(prev => new Set(prev).add(photo.src));
+        };
+      });
+    };
+
+    preloadImages();
+  }, []);
 
   return (
     <section id="portfolio" className="mb-16">
@@ -65,7 +80,9 @@ export const PhotoGrid = () => {
                 <img
                   src={photo.src}
                   alt={photo.alt}
-                  className="w-full h-auto"
+                  className={`w-full h-auto transition-opacity duration-300 ${
+                    loadedImages.has(photo.src) ? 'opacity-100' : 'opacity-0'
+                  }`}
                   loading="lazy"
                 />
               </div>
