@@ -1,4 +1,8 @@
-import React from 'react';
+import React, { useState } from 'react';
+import {
+  Dialog,
+  DialogContent,
+} from "@/components/ui/dialog";
 
 const photos = [
   {
@@ -44,22 +48,42 @@ const photos = [
 ];
 
 export const PhotoGrid = () => {
+  const [selectedPhoto, setSelectedPhoto] = useState<typeof photos[0] | null>(null);
+
   return (
-    <div className="px-6 md:px-8 py-8">
-      <div className="masonry-grid">
-        {photos.map((photo) => (
-          <div key={photo.id} className="masonry-item">
-            <div className="image-container">
-              <img
-                src={photo.src}
-                alt={photo.alt}
-                className="w-full h-auto"
-                loading="lazy"
-              />
+    <>
+      <div className="px-6 md:px-8 py-8">
+        <div className="masonry-grid">
+          {photos.map((photo) => (
+            <div 
+              key={photo.id} 
+              className="masonry-item cursor-pointer"
+              onClick={() => setSelectedPhoto(photo)}
+            >
+              <div className="image-container">
+                <img
+                  src={photo.src}
+                  alt={photo.alt}
+                  className="w-full h-auto"
+                  loading="lazy"
+                />
+              </div>
             </div>
-          </div>
-        ))}
+          ))}
+        </div>
       </div>
-    </div>
+
+      <Dialog open={!!selectedPhoto} onOpenChange={() => setSelectedPhoto(null)}>
+        <DialogContent className="max-w-[90vw] max-h-[90vh] p-0">
+          {selectedPhoto && (
+            <img
+              src={selectedPhoto.src}
+              alt={selectedPhoto.alt}
+              className="w-full h-full object-contain"
+            />
+          )}
+        </DialogContent>
+      </Dialog>
+    </>
   );
 };
