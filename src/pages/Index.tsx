@@ -1,6 +1,8 @@
 import React from 'react';
 import { Header } from '@/components/Header';
 import { PhotoGrid } from '@/components/PhotoGrid';
+import { About } from '@/components/About';
+import { Contact } from '@/components/Contact';
 
 const Index = () => {
   return (
@@ -8,6 +10,8 @@ const Index = () => {
       <Header />
       <main>
         <PhotoGrid />
+        <About />
+        <Contact />
       </main>
     </div>
   );

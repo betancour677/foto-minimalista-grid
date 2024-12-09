@@ -3,6 +3,7 @@ import {
   Dialog,
   DialogContent,
 } from "@/components/ui/dialog";
+import { ScrollArea } from "@/components/ui/scroll-area";
 
 const photos = [
   {
@@ -51,7 +52,7 @@ export const PhotoGrid = () => {
   const [selectedPhoto, setSelectedPhoto] = useState<typeof photos[0] | null>(null);
 
   return (
-    <>
+    <section id="portfolio" className="mb-16">
       <div className="px-6 md:px-8 py-8">
         <div className="masonry-grid">
           {photos.map((photo) => (
@@ -75,15 +76,17 @@ export const PhotoGrid = () => {
 
       <Dialog open={!!selectedPhoto} onOpenChange={() => setSelectedPhoto(null)}>
         <DialogContent className="max-w-[90vw] max-h-[90vh] p-0">
-          {selectedPhoto && (
-            <img
-              src={selectedPhoto.src}
-              alt={selectedPhoto.alt}
-              className="w-full h-full object-contain"
-            />
-          )}
+          <ScrollArea className="h-full max-h-[85vh] w-full">
+            {selectedPhoto && (
+              <img
+                src={selectedPhoto.src}
+                alt={selectedPhoto.alt}
+                className="w-full h-auto"
+              />
+            )}
+          </ScrollArea>
         </DialogContent>
       </Dialog>
-    </>
+    </section>
   );
 };
