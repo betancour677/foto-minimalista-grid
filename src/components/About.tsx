@@ -1,9 +1,12 @@
 import React from 'react';
+import { useScrollAnimation } from '@/hooks/useScrollAnimation';
 
 export const About = () => {
+  const scrollRef = useScrollAnimation();
+
   return (
     <section id="about" className="py-16 px-6 md:px-8 bg-gray-50">
-      <div className="max-w-3xl mx-auto">
+      <div ref={scrollRef} className="max-w-3xl mx-auto opacity-0">
         <h2 className="text-3xl font-semibold mb-6">About Me</h2>
         <div className="space-y-4 text-gray-600">
           <p>

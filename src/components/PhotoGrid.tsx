@@ -1,109 +1,47 @@
-import React, { useState, useEffect } from 'react';
-import {
-  Dialog,
-  DialogContent,
-} from "@/components/ui/dialog";
-import { ScrollArea } from "@/components/ui/scroll-area";
-
-const photos = [
-  {
-    id: 1,
-    src: "https://images.unsplash.com/photo-1472396961693-142e6e269027",
-    alt: "Landscape photo 1",
-  },
-  {
-    id: 2,
-    src: "https://images.unsplash.com/photo-1433086966358-54859d0ed716",
-    alt: "Landscape photo 2",
-  },
-  {
-    id: 3,
-    src: "https://images.unsplash.com/photo-1465146344425-f00d5f5c8f07",
-    alt: "Landscape photo 3",
-  },
-  {
-    id: 4,
-    src: "https://images.unsplash.com/photo-1482938289607-e9573fc25ebb",
-    alt: "Landscape photo 4",
-  },
-  {
-    id: 5,
-    src: "https://images.unsplash.com/photo-1509316975850-ff9c5deb0cd9",
-    alt: "Landscape photo 5",
-  },
-  {
-    id: 6,
-    src: "https://images.unsplash.com/photo-1513836279014-a89f7a76ae86",
-    alt: "Landscape photo 6",
-  },
-  {
-    id: 7,
-    src: "https://images.unsplash.com/photo-1518495973542-4542c06a5843",
-    alt: "Landscape photo 7",
-  },
-  {
-    id: 8,
-    src: "https://images.unsplash.com/photo-1469474968028-56623f02e42e",
-    alt: "Landscape photo 8",
-  },
-];
+import React from 'react';
+import { Dialog, DialogContent, DialogTrigger } from "@/components/ui/dialog";
+import { useScrollAnimation } from '@/hooks/useScrollAnimation';
 
 export const PhotoGrid = () => {
-  const [selectedPhoto, setSelectedPhoto] = useState<typeof photos[0] | null>(null);
-  const [loadedImages, setLoadedImages] = useState<Set<string>>(new Set());
-
-  useEffect(() => {
-    const preloadImages = () => {
-      photos.forEach(photo => {
-        const img = new Image();
-        img.src = photo.src;
-        img.onload = () => {
-          setLoadedImages(prev => new Set(prev).add(photo.src));
-        };
-      });
-    };
-
-    preloadImages();
-  }, []);
+  const images = [
+    '/placeholder.svg',
+    '/placeholder.svg',
+    '/placeholder.svg',
+    '/placeholder.svg',
+    '/placeholder.svg',
+    '/placeholder.svg',
+  ];
 
   return (
-    <section id="portfolio" className="mb-16">
-      <div className="px-6 md:px-8 py-8">
-        <div className="masonry-grid">
-          {photos.map((photo) => (
-            <div 
-              key={photo.id} 
-              className="masonry-item cursor-pointer"
-              onClick={() => setSelectedPhoto(photo)}
-            >
-              <div className="image-container">
+    <section id="portfolio" className="py-16 px-6 md:px-8">
+      <div className="masonry-grid">
+        {images.map((image, index) => {
+          const ScrollRef = useScrollAnimation();
+          return (
+            <Dialog key={index}>
+              <DialogTrigger asChild>
+                <div ref={ScrollRef} className="masonry-item opacity-0">
+                  <div className="image-container">
+                    <img
+                      src={image}
+                      alt={`Portfolio item ${index + 1}`}
+                      className="w-full h-auto"
+                      loading="lazy"
+                    />
+                  </div>
+                </div>
+              </DialogTrigger>
+              <DialogContent className="max-w-4xl h-[80vh] overflow-y-auto">
                 <img
-                  src={photo.src}
-                  alt={photo.alt}
-                  className={`w-full h-auto transition-opacity duration-300 ${
-                    loadedImages.has(photo.src) ? 'opacity-100' : 'opacity-0'
-                  }`}
-                  loading="lazy"
+                  src={image}
+                  alt={`Portfolio item ${index + 1}`}
+                  className="w-full h-auto"
                 />
-              </div>
-            </div>
-          ))}
-        </div>
+              </DialogContent>
+            </Dialog>
+          );
+        })}
       </div>
-
-      <Dialog open={!!selectedPhoto} onOpenChange={() => setSelectedPhoto(null)}>
-        <DialogContent className="max-w-[90vw] max-h-[90vh] p-0">
-          <ScrollArea className="h-full max-h-[85vh] w-full">
-            {selectedPhoto && (
-              <img
-                src={selectedPhoto.src}
-                alt={selectedPhoto.alt}
-                className="w-full h-auto"
-              />
-            )}
-          </ScrollArea>
-        </DialogContent>
-      </Dialog>
     </section>
   );
 };
