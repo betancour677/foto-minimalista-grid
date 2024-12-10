@@ -4,12 +4,12 @@ import { useScrollAnimation } from '@/hooks/useScrollAnimation';
 
 export const PhotoGrid = () => {
   const images = [
-    'https://source.unsplash.com/random/800x600?nature',
-    'https://source.unsplash.com/random/800x600?architecture',
-    'https://source.unsplash.com/random/800x600?people',
-    'https://source.unsplash.com/random/800x600?city',
-    'https://source.unsplash.com/random/800x600?travel',
-    'https://source.unsplash.com/random/800x600?art',
+    'https://images.unsplash.com/photo-1469474968028-56623f02e42e',
+    'https://images.unsplash.com/photo-1447752875215-b2761acb3c5d',
+    'https://images.unsplash.com/photo-1433086966358-54859d0ed716',
+    'https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05',
+    'https://images.unsplash.com/photo-1441974231531-c6227db76b6e',
+    'https://images.unsplash.com/photo-1472214103451-9374bd1c798e'
   ];
 
   return (
