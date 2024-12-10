@@ -1,8 +1,10 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Dialog, DialogContent, DialogTrigger } from "@/components/ui/dialog";
 import { useScrollAnimation } from '@/hooks/useScrollAnimation';
+import { Skeleton } from "@/components/ui/skeleton";
 
 export const PhotoGrid = () => {
+  const [loadedImages, setLoadedImages] = useState<{ [key: string]: boolean }>({});
   const images = [
     'https://images.unsplash.com/photo-1469474968028-56623f02e42e',
     'https://images.unsplash.com/photo-1447752875215-b2761acb3c5d',
@@ -20,7 +22,11 @@ export const PhotoGrid = () => {
     'https://images.unsplash.com/photo-1473091534298-04dcbce3278c',
     'https://images.unsplash.com/photo-1519389950473-47ba0277781c',
     'https://images.unsplash.com/photo-1460925895917-afdab827c52f'
-  ];
+  ].map(url => `${url}?auto=format&fit=crop&w=800&q=80`);
+
+  const handleImageLoad = (imageUrl: string) => {
+    setLoadedImages(prev => ({ ...prev, [imageUrl]: true }));
+  };
 
   return (
     <section id="portfolio" className="py-16 px-6 md:px-8">
@@ -32,11 +38,17 @@ export const PhotoGrid = () => {
               <DialogTrigger asChild>
                 <div ref={ScrollRef} className="masonry-item opacity-0">
                   <div className="image-container">
+                    {!loadedImages[image] && (
+                      <Skeleton className="w-full h-[300px] rounded-lg" />
+                    )}
                     <img
                       src={image}
                       alt={`Portfolio item ${index + 1}`}
-                      className="w-full h-auto"
+                      className={`w-full h-auto transition-opacity duration-300 ${
+                        loadedImages[image] ? 'opacity-100' : 'opacity-0'
+                      }`}
                       loading="lazy"
+                      onLoad={() => handleImageLoad(image)}
                     />
                   </div>
                 </div>

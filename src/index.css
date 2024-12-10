@@ -27,7 +27,7 @@
     --ring: 240 5.9% 10%;
     --radius: 0.5rem;
   }
- 
+
   * {
     @apply border-border;
   }
@@ -54,10 +54,25 @@
   }
 
   .image-container img {
-    @apply w-full h-auto transition-transform duration-300;
+    @apply w-full h-auto transition-all duration-300 ease-in-out;
   }
 
   .image-container:hover img {
-    @apply animate-image-hover;
+    @apply scale-105;
+  }
+
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .animate-fade-in {
+    animation: fadeIn 0.6s ease-out forwards;
   }
 }
