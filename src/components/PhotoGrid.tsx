@@ -9,7 +9,17 @@ export const PhotoGrid = () => {
     'https://images.unsplash.com/photo-1433086966358-54859d0ed716',
     'https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05',
     'https://images.unsplash.com/photo-1441974231531-c6227db76b6e',
-    'https://images.unsplash.com/photo-1472214103451-9374bd1c798e'
+    'https://images.unsplash.com/photo-1472214103451-9374bd1c798e',
+    'https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d',
+    'https://images.unsplash.com/photo-1581091226825-a6a2a5aee158',
+    'https://images.unsplash.com/photo-1485827404703-89b55fcc595e',
+    'https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5',
+    'https://images.unsplash.com/photo-1531297484001-80022131f5a1',
+    'https://images.unsplash.com/photo-1487058792275-0ad4aaf24ca7',
+    'https://images.unsplash.com/photo-1605810230434-7631ac76ec81',
+    'https://images.unsplash.com/photo-1473091534298-04dcbce3278c',
+    'https://images.unsplash.com/photo-1519389950473-47ba0277781c',
+    'https://images.unsplash.com/photo-1460925895917-afdab827c52f'
   ];
 
   return (
