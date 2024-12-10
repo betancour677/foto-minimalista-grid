@@ -6,22 +6,22 @@ import { Skeleton } from "@/components/ui/skeleton";
 export const PhotoGrid = () => {
   const [loadedImages, setLoadedImages] = useState<{ [key: string]: boolean }>({});
   const images = [
-    'https://images.unsplash.com/photo-1469474968028-56623f02e42e',
-    'https://images.unsplash.com/photo-1447752875215-b2761acb3c5d',
-    'https://images.unsplash.com/photo-1433086966358-54859d0ed716',
+    'https://images.unsplash.com/photo-1506744038136-46273834b3fb',
+    'https://images.unsplash.com/photo-1511884642898-4c92249e20b6',
     'https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05',
-    'https://images.unsplash.com/photo-1441974231531-c6227db76b6e',
+    'https://images.unsplash.com/photo-1497436072909-60f360e1d4b1',
+    'https://images.unsplash.com/photo-1433086966358-54859d0ed716',
     'https://images.unsplash.com/photo-1472214103451-9374bd1c798e',
-    'https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d',
-    'https://images.unsplash.com/photo-1581091226825-a6a2a5aee158',
-    'https://images.unsplash.com/photo-1485827404703-89b55fcc595e',
-    'https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5',
-    'https://images.unsplash.com/photo-1531297484001-80022131f5a1',
-    'https://images.unsplash.com/photo-1487058792275-0ad4aaf24ca7',
-    'https://images.unsplash.com/photo-1605810230434-7631ac76ec81',
-    'https://images.unsplash.com/photo-1473091534298-04dcbce3278c',
-    'https://images.unsplash.com/photo-1519389950473-47ba0277781c',
-    'https://images.unsplash.com/photo-1460925895917-afdab827c52f'
+    'https://images.unsplash.com/photo-1469474968028-56623f02e42e',
+    'https://images.unsplash.com/photo-1501854140801-50d01698950b',
+    'https://images.unsplash.com/photo-1441974231531-c6227db76b6e',
+    'https://images.unsplash.com/photo-1426604966848-d7adac402bff',
+    'https://images.unsplash.com/photo-1470252649378-9c29740c9fa8',
+    'https://images.unsplash.com/photo-1505765050516-f72dcac9c60e',
+    'https://images.unsplash.com/photo-1439853949127-fa647821eba0',
+    'https://images.unsplash.com/photo-1455218873509-8097305ee378',
+    'https://images.unsplash.com/photo-1465146344425-f00d5f5c8f07',
+    'https://images.unsplash.com/photo-1510797215324-95aa89f43c33'
   ].map(url => `${url}?auto=format&fit=crop&w=800&q=80`);
 
   const handleImageLoad = (imageUrl: string) => {
