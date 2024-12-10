@@ -4,12 +4,12 @@ import { useScrollAnimation } from '@/hooks/useScrollAnimation';
 
 export const PhotoGrid = () => {
   const images = [
-    '/placeholder.svg',
-    '/placeholder.svg',
-    '/placeholder.svg',
-    '/placeholder.svg',
-    '/placeholder.svg',
-    '/placeholder.svg',
+    'https://source.unsplash.com/random/800x600?nature',
+    'https://source.unsplash.com/random/800x600?architecture',
+    'https://source.unsplash.com/random/800x600?people',
+    'https://source.unsplash.com/random/800x600?city',
+    'https://source.unsplash.com/random/800x600?travel',
+    'https://source.unsplash.com/random/800x600?art',
   ];
 
   return (
