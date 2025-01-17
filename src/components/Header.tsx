@@ -19,7 +19,10 @@ export const Header = () => {
 
   return (
     <header className="py-8 px-6 md:px-8 flex justify-between items-center animate-fade-in">
-      <h1 className="text-3xl md:text-4xl font-bold font-urbanist tracking-wide">Gustavo Luna</h1>
+      <div>
+        <h1 className="text-3xl md:text-4xl font-bold font-urbanist tracking-wide">Gustavo Luna</h1>
+        <p className="text-gray-600 font-quicksand mt-1">Fotógrafo profesional</p>
+      </div>
       <nav className="font-quicksand">
         <ul className="flex space-x-6 text-sm">
           <li>
