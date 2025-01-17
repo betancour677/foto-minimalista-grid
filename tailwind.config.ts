@@ -72,6 +72,7 @@ export default {
         playfair: ["Playfair Display", "serif"],
         dancing: ["Dancing Script", "cursive"],
         urbanist: ["Urbanist", "sans-serif"],
+        quicksand: ["Quicksand", "sans-serif"],
       },
     },
   },
