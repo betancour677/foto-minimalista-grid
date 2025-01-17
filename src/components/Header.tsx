@@ -3,7 +3,7 @@ import React from 'react';
 export const Header = () => {
   return (
     <header className="py-8 px-6 md:px-8 flex justify-between items-center animate-fade-in">
-      <h1 className="text-2xl font-semibold">Juan Pérez</h1>
+      <h1 className="text-2xl font-semibold">Gustavo Luna</h1>
       <nav>
         <ul className="flex space-x-6 text-sm">
           <li><a href="#portfolio" className="hover:text-gray-600 transition-colors">Portafolio</a></li>
