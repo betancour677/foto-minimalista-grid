@@ -15,19 +15,19 @@ export const Contact = () => {
   return (
     <section id="contact" className="py-16 px-6 md:px-8">
       <div ref={scrollRef} className="max-w-xl mx-auto opacity-0">
-        <h2 className="text-3xl font-semibold mb-6 text-center">Get in Touch</h2>
+        <h2 className="text-3xl font-semibold mb-6 text-center">Contacto</h2>
         <form onSubmit={handleSubmit} className="space-y-6">
           <div>
-            <Input type="text" placeholder="Your Name" required />
+            <Input type="text" placeholder="Tu Nombre" required />
           </div>
           <div>
-            <Input type="email" placeholder="Your Email" required />
+            <Input type="email" placeholder="Tu Email" required />
           </div>
           <div>
-            <Textarea placeholder="Your Message" className="min-h-[150px]" required />
+            <Textarea placeholder="Tu Mensaje" className="min-h-[150px]" required />
           </div>
           <Button type="submit" className="w-full">
-            Send Message
+            Enviar Mensaje
           </Button>
         </form>
       </div>

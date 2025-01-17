@@ -7,16 +7,16 @@ export const About = () => {
   return (
     <section id="about" className="py-16 px-6 md:px-8 bg-gray-50">
       <div ref={scrollRef} className="max-w-3xl mx-auto opacity-0">
-        <h2 className="text-3xl font-semibold mb-6">About Me</h2>
+        <h2 className="text-3xl font-semibold mb-6">Sobre mí</h2>
         <div className="space-y-4 text-gray-600">
           <p>
-            As a professional photographer with over a decade of experience, I specialize in capturing the beauty of natural landscapes and urban environments. My work has been featured in various galleries and publications across the country.
+            Como fotógrafo profesional con más de una década de experiencia, me especializo en capturar la belleza de los paisajes naturales y entornos urbanos. Mi trabajo ha sido presentado en diversas galerías y publicaciones en todo el país.
           </p>
           <p>
-            My approach to photography combines technical precision with artistic vision, always striving to capture the perfect moment that tells a compelling story. Whether I'm shooting majestic mountains or intimate city scenes, I bring the same level of dedication and attention to detail to every project.
+            Mi enfoque en la fotografía combina la precisión técnica con la visión artística, siempre buscando capturar el momento perfecto que cuente una historia cautivadora. Ya sea fotografiando majestuosas montañas o escenas íntimas de la ciudad, aporto el mismo nivel de dedicación y atención al detalle en cada proyecto.
           </p>
           <p>
-            When I'm not behind the camera, I enjoy teaching photography workshops and sharing my knowledge with aspiring photographers. I believe that great photography has the power to move people and change perspectives.
+            Cuando no estoy detrás de la cámara, disfruto impartiendo talleres de fotografía y compartiendo mis conocimientos con fotógrafos aspirantes. Creo que la gran fotografía tiene el poder de conmover a las personas y cambiar perspectivas.
           </p>
         </div>
       </div>
