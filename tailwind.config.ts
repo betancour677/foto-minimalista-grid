@@ -71,6 +71,7 @@ export default {
         sans: ["Inter", "sans-serif"],
         playfair: ["Playfair Display", "serif"],
         dancing: ["Dancing Script", "cursive"],
+        urbanist: ["Urbanist", "sans-serif"],
       },
     },
   },
